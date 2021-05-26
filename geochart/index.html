@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': '<YOUR API KEY>'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([["Country", "# of Builders"], ["Canada", 48], ["India", 191], ["Indonesia", 12], ["Pakistan", 21], ["Netherlands", 18], ["United States", 318], ["Egypt", 9], ["Malaysia", 11], ["United Kingdom", 89], ["Japan", 26], ["Saudi Arabia", 2], ["Italy", 17], ["Brazil", 37], ["Kenya", 6], ["Morocco", 2], ["Germany", 47], ["Costa Rica", 2], ["Sweden", 9], ["Poland", 19], ["Singapore", 18], ["New Zealand", 9], ["Bangladesh", 7], ["Norway", 5], ["Nepal", 5], ["Sri Lanka", 14], ["Nigeria", 14], ["Botswana", 2], ["Finland", 11], ["Philippines", 18], ["Portugal", 4], ["Colombia", 15], ["Hong Kong", 12], ["Taiwan", 9], ["Chile", 10], ["Australia", 42], ["Ireland", 13], ["Peru", 13], ["Vietnam", 2], ["Spain", 18], ["Ghana", 1], ["Russia", 7], ["Turkey", 10], ["South Africa", 9], ["Czechia", 1], ["France", 16], ["Dominican Republic", 2], ["Mexico", 8], ["United Arab Emirates", 2], ["Malta", 1], ["China", 3], ["Austria", 1], ["Belgium", 6], ["Montenegro", 1], ["Hungary", 2], ["Cameroon", 1], ["Israel", 16], ["Argentina", 4], ["Ukraine", 2], ["Lebanon", 1], ["Serbia", 1], ["Nicaragua", 1], ["South Korea", 10], ["Switzerland", 2], ["Guatemala", 1], ["Albania", 2], ["Oman", 1], ["Romania", 2], ["The Bahamas", 1], ["North Macedonia", 1], ["Cambodia", 1], ["Palestine", 1], ["Bahrain", 2], ["Cyprus", 1], ["Denmark", 1], ["Bulgaria", 1], ["Lagos", 1], ["Zimbabwe", 1], ["Panama", 1]]);
+
+        var options = {
+            colorAxis:  {minValue: 1,  colors: ['#7777FF', '#0000FF']},
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 1080; height: 600;"></div>
+  </body>
+</html>
